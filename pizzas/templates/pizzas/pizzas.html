@@ -2,14 +2,18 @@
 
 {% block content %}
 
-    <p>Pizza</p>
+    <p>Pizza: {{ pizzas }}</p>
 
+    <p>Toppings:</p>
     <ul>
-        {% for pizza in pizzas %}
-            <li>{{ pizza }}</li>
-        {% empty %}
-            <li>No pizzas have been added yet.</li>
-        {% endfor %}
+    {% for pizza in pizzas %}
+        <li>
+            <p>{{ toppings.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ toppings.text|linebreaks }}</p>
+        </li>
+    {% empty %}
+        <li>No toppings for this pizza.</li>
+    {% endfor %}
     </ul>
 
     {% endblock content %}
