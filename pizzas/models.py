@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Topic(models.Pizza):
+class Pizza(models.Model):
     """A type of pizza."""
     name = models.CharField(max_length=30)
     date_added = models.DateTimeField(auto_now_add=True)
@@ -10,9 +10,9 @@ class Topic(models.Pizza):
         """Return pizza names."""
         return self.name
 
-class Entry(models.Topping):
+class Topping(models.Model):
     """Topings on a pizza."""
-    pizza = models.ForeignKey(Topic, on_delete=models.CASCADE)
+    pizza = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     date_added = models.DateTimeField(auto_now_add=True)
 
