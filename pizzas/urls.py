@@ -1,4 +1,4 @@
-"""Defines URL patterns for pizzas.""
+"""Defines URL patterns for pizzas."""
 
 from django.urls import path
 
