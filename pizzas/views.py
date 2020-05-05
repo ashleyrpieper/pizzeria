@@ -8,8 +8,9 @@ def index(request):
     """The home page for pizzas."""
     return render(request, 'pizzas/index.html')
 
-def pizzas(request):
-    """Show all pizzas"""
-    pizzas = Pizza.objects.order_by('date_added')
-    context = {'pizzas': pizzas}
+def pizzas(request, pizzas_id):
+    """Show a single pizza and all its toppings."""
+    pizzas = Pizza.objects.get(id=pizzas_id)
+    toppings = pizzas.entry_set.order_by('-date_added')
+    context = {'pizzas': pizzas, 'toppings': toppings}
     return render(request, 'pizzas/pizzas.html', context)
