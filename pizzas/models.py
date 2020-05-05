@@ -17,7 +17,7 @@ class Topping(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        verbose_name_plural = 'entries'
+        verbose_name_plural = 'toppings'
 
     def __str__(self):
         """Return pizza type & topping name."""
