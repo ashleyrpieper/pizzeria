@@ -6,7 +6,7 @@ from .models import Pizza
 
 def index(request):
     """The home page for pizzas."""
-    return render(request, )
+    return render(request, 'pizzas/index.html')
 
 def pizzas(request):
     """Show all pizzas"""
