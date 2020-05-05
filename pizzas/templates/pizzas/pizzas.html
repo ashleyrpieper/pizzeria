@@ -8,8 +8,7 @@
     <ul>
     {% for pizza in pizzas %}
         <li>
-            <p>{{ toppings.date_added|date:'M d, Y H:i' }}</p>
-            <p>{{ toppings.text|linebreaks }}</p>
+            <a href="{% url 'pizzas:pizzas' pizzas.id %}">{{ pizzas }}</a>>
         </li>
     {% empty %}
         <li>No toppings for this pizza.</li>
