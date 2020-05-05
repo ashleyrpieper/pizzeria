@@ -11,5 +11,5 @@ urlpatterns = [
     # Page for Pizzas.
     path('pizzas/', views.pizzas, name='pizzas'),
     # Detail page for each pizza.
-    path('pizzas/<int:pizza_id>/', views.pizzas, name='pizza'),
+    path('pizzas/<int:pizzas_id>/', views.pizzas, name='pizza'),
 ]
