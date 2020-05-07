@@ -2,17 +2,15 @@
 
 {% block content %}
 
-    <p>Pizza: {{ pizzas }}</p>
+    <p>Pizza: {{ pizza }}</p>
 
     <p>Toppings:</p>
     <ul>
-    {% for pizza in pizzas %}
-        <li>
-            <a href="{% url 'pizzas:pizzas' pizzas.id %}">{{ pizzas }}</a>
-        </li>
+    {% for topping in toppings %}
+        <li>{{ topping }}</li>
     {% empty %}
-        <li>No toppings for this pizza.</li>
+        <li>No toppings have been added to this pizza.</li>
     {% endfor %}
     </ul>
 
-    {% endblock content %}
+{% endblock content %}

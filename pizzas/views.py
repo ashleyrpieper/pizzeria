@@ -10,13 +10,13 @@ def index(request):
 
 def pizzas(request):
     """List all pizzas."""
-    pizzas = Pizza.objects.order_by('name')
+    pizzas = Pizza.objects.order_by('date_added')
     context = {'pizzas': pizzas}
     return render(request, 'pizzas/pizzas.html', context)
 
 def pizza(request, pizza_id):
-    """Show a single pizza and all its toppings."""
-    pizzas = Pizza.objects.get(id=pizza_id)
-    toppings = pizza.entry_set.order_by('-date_added')
+    """Show individual pizzas and their toppings."""
+    pizza = Pizza.objects.get(id=pizza_id)
+    toppings = pizza.topping_set.order_by('-date_added')
     context = {'pizza': pizza, 'toppings': toppings}
     return render(request, 'pizzas/pizza.html', context)
